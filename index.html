@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Woodinville Journal — Homes By Molly Haines</title>
+  <meta name="description" content="Trusted housing insight. Local perspective. Advocating for what matters most to our Woodinville community. Subscribe to The Woodinville Journal by Molly Haines." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #B89A4E;
+      --gold-light: #D4B870;
+      --black: #0F0F0F;
+      --dark: #1A1A1A;
+      --cream: #F9F6EF;
+      --warm-white: #FDFBF7;
+      --text: #2C2C2C;
+      --text-light: #5A5A5A;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--warm-white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ─── HEADER ─── */
+    .site-header {
+      background: var(--black);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .site-header .brand-monogram {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .site-header .brand-name {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+    .site-header .brand-tagline {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .site-header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .site-header nav a:hover { opacity: 1; color: var(--gold); }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--cream);
+      border-bottom: 3px solid var(--gold);
+      padding: 72px 32px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 8vw, 88px);
+      color: var(--black);
+      line-height: 0.95;
+      letter-spacing: -1px;
+      margin-bottom: 4px;
+    }
+    .hero h1 .journal {
+      display: block;
+      font-size: clamp(28px, 5vw, 52px);
+      letter-spacing: 12px;
+      font-weight: 400;
+      color: var(--text-light);
+    }
+    .hero-subtitle {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin: 18px 0 36px;
+      font-weight: 400;
+    }
+    .hero-rule {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+      margin: 0 auto 40px;
+      max-width: 400px;
+    }
+    .hero-rule::before, .hero-rule::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-rule span { color: var(--gold); font-size: 18px; }
+    .hero-edition {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 3.5vw, 28px);
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .hero-edition-sub {
+      font-size: 14px;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+    }
+    .hero-pillars {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-pillar {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .hero-pillar::before {
+      content: '—';
+      color: var(--gold);
+      margin-right: 6px;
+    }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: var(--black);
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .cta-strip h2 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: clamp(22px, 4vw, 34px);
+      margin-bottom: 10px;
+    }
+    .cta-strip p {
+      color: rgba(255,255,255,0.65);
+      font-size: 15px;
+      margin-bottom: 28px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .subscribe-form {
+      display: flex;
+      gap: 0;
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .subscribe-form input[type="text"],
+    .subscribe-form input[type="email"] {
+      flex: 1;
+      min-width: 180px;
+      padding: 14px 18px;
+      font-size: 14px;
+      font-family: 'Lato', sans-serif;
+      border: none;
+      outline: none;
+      background: #fff;
+      color: var(--text);
+    }
+    .subscribe-form input[type="text"] {
+      border-right: 1px solid #eee;
+    }
+    .subscribe-form button {
+      padding: 14px 28px;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .subscribe-form button:hover { background: var(--gold-light); }
+    .cta-privacy {
+      color: rgba(255,255,255,0.35);
+      font-size: 11px;
+      margin-top: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── INSIDE THIS ISSUE ─── */
+    .inside {
+      padding: 72px 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-label {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-label .overline {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .section-label h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 4vw, 38px);
+      color: var(--black);
+    }
+    .section-label .rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 16px auto 0;
+    }
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2px;
+      background: var(--gold);
+    }
+    .topic-card {
+      background: var(--cream);
+      padding: 36px 28px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .topic-card:hover { background: #fff; }
+    .topic-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .topic-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      color: var(--black);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .topic-card p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.55;
+    }
+
+    /* ─── WHY ─── */
+    .why {
+      background: var(--black);
+      padding: 80px 32px;
+    }
+    .why-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .why-copy .overline {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 16px;
+    }
+    .why-copy h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.5vw, 36px);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .why-copy p {
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .why-copy .highlight {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .questions-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .questions-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(255,255,255,0.05);
+      padding: 16px 20px;
+      border-left: 3px solid var(--gold);
+    }
+    .questions-list li .q-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .questions-list li p {
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      margin: 0;
+      font-style: italic;
+    }
+
+    /* ─── ABOUT MOLLY ─── */
+    .about {
+      padding: 80px 32px;
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about .overline {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 16px;
+    }
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 4vw, 38px);
+      color: var(--black);
+      margin-bottom: 24px;
+    }
+    .about p {
+      font-size: 16px;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .molly-sig {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-style: italic;
+      color: var(--black);
+      margin: 32px 0 8px;
+    }
+    .molly-title {
+      font-size: 13px;
+      color: var(--text-light);
+      letter-spacing: 1px;
+    }
+    .credentials {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+      padding-top: 36px;
+      border-top: 1px solid #e8e0d0;
+    }
+    .credential {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .credential::before { content: '★ '; }
+
+    /* ─── ASK THE JOURNAL ─── */
+    .ask {
+      background: var(--cream);
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
+      padding: 72px 32px;
+      text-align: center;
+    }
+    .ask .overline {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 16px;
+    }
+    .ask h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 4vw, 38px);
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    .ask p {
+      font-size: 15px;
+      color: var(--text-light);
+      max-width: 500px;
+      margin: 0 auto 36px;
+    }
+    .ask-form {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .ask-form textarea {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 15px;
+      font-family: 'Lato', sans-serif;
+      border: 2px solid #ddd;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      resize: vertical;
+      min-height: 120px;
+      margin-bottom: 0;
+      transition: border-color 0.2s;
+    }
+    .ask-form textarea:focus { border-color: var(--gold); }
+    .ask-form input[type="email"] {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 14px;
+      font-family: 'Lato', sans-serif;
+      border: 2px solid #ddd;
+      border-top: none;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .ask-form input[type="email"]:focus { border-color: var(--gold); }
+    .ask-form button {
+      margin-top: 12px;
+      padding: 15px 36px;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      transition: background 0.2s;
+    }
+    .ask-form button:hover { background: var(--gold-light); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      padding: 48px 32px 28px;
+    }
+    .footer-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand .monogram {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .footer-brand .name {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.4;
+      margin-top: 6px;
+    }
+    .footer-brand .tagline {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .footer-contact {
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+      line-height: 2;
+      padding-top: 8px;
+    }
+    .footer-contact a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-motto {
+      text-align: right;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: rgba(255,255,255,0.4);
+      font-size: 14px;
+      padding-top: 8px;
+      line-height: 1.8;
+    }
+    .footer-motto strong { color: var(--gold); font-style: normal; }
+    .footer-bottom {
+      max-width: 1000px;
+      margin: 20px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      color: rgba(255,255,255,0.25);
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.25); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .site-header nav { display: none; }
+      .why-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .footer-motto { text-align: left; }
+      .subscribe-form { flex-direction: column; }
+      .subscribe-form input[type="text"],
+      .subscribe-form input[type="email"],
+      .subscribe-form button { width: 100%; border-right: none; }
+      .hero-pillars { gap: 20px; flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 48px 20px 40px; }
+      .inside, .ask, .about { padding: 56px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="https://homesbymollyhaines.com" class="brand">
+      <div class="brand-monogram">MH</div>
+      <div>
+        <div class="brand-name">Homes by Molly Haines</div>
+        <div class="brand-tagline">Real Estate Advisors</div>
+      </div>
+    </a>
+    <nav>
+      <a href="https://homesbymollyhaines.com">← Back to main site</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Inaugural Edition</div>
+    <h1>
+      THE<br>WOODINVILLE
+      <span class="journal">J O U R N A L</span>
+    </h1>
+    <p class="hero-subtitle">A Publication for the People Who Call Woodinville Home</p>
+    <div class="hero-rule"><span>✦</span></div>
+    <p class="hero-edition">From Washington, D.C. to Woodinville</p>
+    <p class="hero-edition-sub">What Every Homeowner Should Know</p>
+    <div class="hero-pillars">
+      <span class="hero-pillar">Trusted Housing Insight</span>
+      <span class="hero-pillar">Local Perspective</span>
+      <span class="hero-pillar">Advocating for Our Community</span>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE CTA -->
+  <section class="cta-strip">
+    <h2>Get Every Edition Delivered Free</h2>
+    <p>Join your Woodinville neighbors who rely on The Journal for clear, unbiased housing insight — straight to your inbox.</p>
+    <form class="subscribe-form" action="https://formsubmit.co/molly@homesbymollyhaines.com" method="POST">
+      <input type="hidden" name="_subject" value="New Woodinville Journal Subscriber" />
+      <input type="hidden" name="_next" value="https://homesbymollyhaines.com" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email address" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="cta-privacy">No spam. Unsubscribe any time. Your information stays with us.</p>
+  </section>
+
+  <!-- INSIDE THIS ISSUE -->
+  <section class="inside">
+    <div class="section-label">
+      <span class="overline">Inside This Issue</span>
+      <h2>What We're Covering</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <span class="topic-icon">🏛️</span>
+        <h3>Housing Advocacy</h3>
+        <p>What's happening at the state and national level — and how it affects Woodinville homeowners directly.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">💰</span>
+        <h3>Capital Gains</h3>
+        <p>When selling triggers taxes, when it doesn't, and what strategies informed sellers are using right now.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">🏠</span>
+        <h3>Can You Afford to Move?</h3>
+        <p>A practical look at the real math behind upsizing, downsizing, and making a move in today's rate environment.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">📊</span>
+        <h3>Woodinville Market Watch</h3>
+        <p>Local data, real trends, and what the numbers actually mean for your home's value and your timing.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">💬</span>
+        <h3>Ask The Journal</h3>
+        <p>Your questions, answered publicly. Submit what's on your mind — it might make the next edition.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY I CREATED IT -->
+  <section class="why">
+    <div class="why-inner">
+      <div class="why-copy">
+        <span class="overline">From Molly's Desk</span>
+        <h2>Why I Created The Woodinville Journal</h2>
+        <p><span class="highlight">Woodinville isn't just where I work. It's home.</span></p>
+        <p>As a lifelong Woodinville resident and proud Woodinville High School alumna, I've spent years helping local families navigate some of life's biggest financial decisions.</p>
+        <p>Along the way, I kept hearing the same questions — from neighbors at school pickup, from clients around the kitchen table, from people who deserved straight answers and weren't getting them.</p>
+        <p>That's why I created The Woodinville Journal. Every issue is designed to help you make informed decisions about your home, your equity, and your future.</p>
+      </div>
+      <ul class="questions-list">
+        <li>
+          <span class="q-icon">🏡</span>
+          <p>"Can we afford to move — with rates where they are right now?"</p>
+        </li>
+        <li>
+          <span class="q-icon">💵</span>
+          <p>"Will capital gains taxes affect us if we sell?"</p>
+        </li>
+        <li>
+          <span class="q-icon">🔨</span>
+          <p>"Which home improvements are actually worth making before we list?"</p>
+        </li>
+        <li>
+          <span class="q-icon">🏛️</span>
+          <p>"What do today's housing policy changes mean for our family?"</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABOUT MOLLY -->
+  <section class="about">
+    <span class="overline">Your Publisher</span>
+    <h2>Bringing National Housing Conversations Home to Woodinville</h2>
+    <p>Through my leadership with Washington REALTORS®, Seattle King County REALTORS®, and the National Association of REALTORS®, I have the opportunity to advocate for homeowners at the local, state, and national levels.</p>
+    <p>The Journal is how I bring those conversations back to the people they matter most to: the families who call Woodinville home.</p>
+    <div class="molly-sig">Molly Haines</div>
+    <div class="molly-title">Founder &amp; Managing Broker — Homes by Molly Haines | Real Estate Advisors</div>
+    <div class="credentials">
+      <span class="credential">Washington REALTORS® Leadership</span>
+      <span class="credential">Seattle King County REALTORS®</span>
+      <span class="credential">NAR Member</span>
+      <span class="credential">CDRE Certified</span>
+    </div>
+  </section>
+
+  <!-- ASK THE JOURNAL -->
+  <section class="ask">
+    <span class="overline">Reader Submissions</span>
+    <h2>Ask The Journal</h2>
+    <p>What housing question would you like answered next? Submit yours below — it may appear in an upcoming edition.</p>
+    <form class="ask-form" action="https://formsubmit.co/molly@homesbymollyhaines.com" method="POST">
+      <input type="hidden" name="_subject" value="Ask The Journal — Reader Question" />
+      <input type="hidden" name="_next" value="https://homesbymollyhaines.com" />
+      <input type="hidden" name="_captcha" value="false" />
+      <textarea name="question" placeholder="Your question for The Journal..." required></textarea>
+      <input type="email" name="email" placeholder="Your email address (optional — for a direct reply)" />
+      <br />
+      <button type="submit">Submit Your Question</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="monogram">MH</div>
+        <div class="name">Homes By<br>Molly Haines</div>
+        <div class="tagline">Real Estate Advisors</div>
+      </div>
+      <div class="footer-contact">
+        <a href="tel:2064984136">📞 206.498.4136</a><br>
+        <a href="https://homesbymollyhaines.com">🌐 HomesByMollyHaines.com</a><br>
+        <a href="https://instagram.com/RealMollyHaines">📷 @RealMollyHaines</a><br>
+        733 7th Ave Suite #211<br>
+        Kirkland, WA 98033
+      </div>
+      <div class="footer-motto">
+        <strong>Educate. Advocate. Empower.</strong><br>
+        Proudly local.<br>
+        Always advocating.<br>
+        Here for Woodinville.
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Homes By Molly Haines. All rights reserved. Real Broker LLC.</p>
+      <p>
+        <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+        <a href="#">Unsubscribe</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
